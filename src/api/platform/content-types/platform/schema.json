@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "platforms",
+  "info": {
+    "singularName": "platform",
+    "pluralName": "platforms",
+    "displayName": "Platform",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "platform": {
+      "type": "string",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "cardColor": {
+      "type": "string",
+      "required": true
+    },
+    "textColor": {
+      "type": "string",
+      "required": true
+    },
+    "iconColor": {
+      "type": "string",
+      "required": true
+    },
+    "urlPattern": {
+      "type": "string",
+      "required": true
+    },
+    "dev_links": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dev-link.dev-link",
+      "mappedBy": "platform"
+    }
+  }
+}

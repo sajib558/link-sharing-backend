@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dev_links",
+  "info": {
+    "singularName": "dev-link",
+    "pluralName": "dev-links",
+    "displayName": "DevLink",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "users_permissions_users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "dev_links"
+    },
+    "priority": {
+      "type": "integer"
+    },
+    "platform": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::platform.platform",
+      "inversedBy": "dev_links"
+    }
+  }
+}
