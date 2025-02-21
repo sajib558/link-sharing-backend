@@ -1,20 +1,7 @@
 export default [
   "strapi::logger",
   "strapi::errors",
-  {
-    name: "strapi::security",
-    config: {
-      contentSecurityPolicy: {
-        useDefaults: true,
-        directives: {
-          "connect-src": ["'self'", "https:"],
-          "img-src": ["'self'", "data:", "blob:", "res.cloudinary.com"],
-          "media-src": ["'self'", "data:", "blob:", "res.cloudinary.com"],
-          upgradeInsecureRequests: null,
-        },
-      },
-    },
-  },
+  "strapi::security",
   "strapi::cors",
   "strapi::poweredBy",
   "strapi::query",
@@ -24,7 +11,10 @@ export default [
   "strapi::public",
 ];
 
-// module.exports = ({ env }) => [
+// This is for cloudinary add
+
+// export default [
+//   "strapi::logger",
 //   "strapi::errors",
 //   {
 //     name: "strapi::security",
@@ -33,28 +23,15 @@ export default [
 //         useDefaults: true,
 //         directives: {
 //           "connect-src": ["'self'", "https:"],
-//           "default-src": ["'self'"],
-//           "img-src": [
-//             "'self'",
-//             "data:",
-//             "blob:",
-//             "market-assets.strapi.io",
-//             env("SUPABASE_URL"),
-//           ],
-//           "media-src": [
-//             "'self'",
-//             "data:",
-//             "blob:",
-//             "market-assets.strapi.io",
-//             env("SUPABASE_URL"),
-//           ],
+//           "img-src": ["'self'", "data:", "blob:", "res.cloudinary.com"],
+//           "media-src": ["'self'", "data:", "blob:", "res.cloudinary.com"],
+//           upgradeInsecureRequests: null,
 //         },
 //       },
 //     },
 //   },
 //   "strapi::cors",
 //   "strapi::poweredBy",
-//   "strapi::logger",
 //   "strapi::query",
 //   "strapi::body",
 //   "strapi::session",
